@@ -1,0 +1,7 @@
+common:
+  port: 8080
+  #host: localhost
+
+postgres:
+  database_url: postgres://postgres:gast3864@localhost/app
+  require_ssl: false
