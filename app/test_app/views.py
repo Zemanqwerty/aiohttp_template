@@ -70,7 +70,7 @@ async def api_logout(request):
 
 # функция регистрации пользователя
 @logger.catch()
-async def api_registration(requset: web.Request) -> web.Response:
+async def api_authorization(requset: web.Request) -> web.Response:
     try:
         # получаем json и сохраняем в переменную
         json_data = await requset.json()
