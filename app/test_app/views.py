@@ -70,10 +70,10 @@ async def api_logout(request):
 
 # функция регистрации пользователя
 @logger.catch()
-async def api_authorization(requset: web.Request) -> web.Response:
+async def api_authorization(request: web.Request) -> web.Response:
     try:
         # получаем json и сохраняем в переменную
-        json_data = await requset.json()
+        json_data = await request.json()
 
         # обращаемся к словарю по ключу
         username = json_data['username']
@@ -81,7 +81,7 @@ async def api_authorization(requset: web.Request) -> web.Response:
 
         try:
             # соединение с БД
-            async with await psycopg.AsyncConnection().connect(dbname=settings.DB_NAME, user=settings.USER, password=settings.PASSWORD, port=settings.PORT, host=settings.HOST) as conn:
+            async with await psycopg.AsyncConnection.connect(dbname=settings.DB_NAME, user=settings.USER, password=settings.PASSWORD, port=settings.PORT, host=settings.HOST) as conn:
                 async with conn.cursor() as cur:
                     pass
                 cur.close()
@@ -100,10 +100,10 @@ async def api_authorization(requset: web.Request) -> web.Response:
 
 # функция регистрации пользователя
 @logger.catch()
-async def api_registration(requset: web.Request) -> web.Response:
+async def api_registration(request: web.Request) -> web.Response:
     try:
         # получаем json и сохраняем в переменную
-        json_data = await requset.json()
+        json_data = await request.json()
 
         # обращаемся к словарю по ключу
         username = json_data['username']
