@@ -35,13 +35,13 @@ def debug_settings():
 # данные для подключения к постгрес
 if DEBUG == True:
     DB_HOST = 'localhost'
-    DB_PASSWORD = 'Gast3864'
+    DB_PASSWORD = 'PASSWORD'
     DB_PORT = 5432
-    DB_USER = 'postgres'
-    DB_NAME = 'app'
+    DB_USER = 'DB_USER'
+    DB_NAME = 'DB_NAME'
 else:
     DB_HOST = 'pg_db'
-    DB_PASSWORD = 'root'
+    DB_PASSWORD = 'PASSWORD'
     DB_PORT = 5432
-    DB_USER = 'postgres'
-    DB_NAME = 'app'
+    DB_USER = 'DB_USER'
+    DB_NAME = 'DB_NAME'
